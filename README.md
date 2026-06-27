@@ -297,9 +297,7 @@ Place the downloaded `.pth` file in your project root.
 ├── dataset.py                  # LMDB dataset loader (Windows-fixed)
 ├── utils.py                    # Label converters and Persian character set
 ├── create_lmdb_dataset.py      # Convert image+label pairs to LMDB
-├── convert_to_jit.py           # Export .pth to TorchScript .pt
 ├── requirements.txt            # Python dependencies
-└── VIT_for_us.ipynb            # Jupyter notebook with full workflow
 ```
 
 ---
