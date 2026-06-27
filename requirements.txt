@@ -1,0 +1,15 @@
+# Core dependencies
+validators==0.18.2
+timm==0.4.5
+lmdb==1.3.0
+Pillow>=8.3.2
+nltk>=3.6.4
+natsort==7.1.0
+opencv-contrib-python==4.5.5.64
+numpy<2
+scikit-image==0.19.3
+
+# PyTorch with CUDA 11.7 — install separately with the index URL:
+# pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 --index-url https://download.pytorch.org/whl/cu117
+torch==1.13.1+cu117
+torchvision==0.14.1+cu117
