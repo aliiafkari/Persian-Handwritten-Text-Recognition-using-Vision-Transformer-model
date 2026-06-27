@@ -37,7 +37,7 @@ The images used for training the Vision Transformer (ViT) models were selected f
 
 ### Model Variants
 
-To investigate the impact of model capacity and architectural complexity on recognition performance, three different Vision Transformer variants were considered in this study: ViT-Tiny, ViT-Small, and ViT-Base. These models represent progressively larger architectures with increasing numbers of parameters and representational capabilities. All models were trained using the same training protocol and dataset configuration to enable a fair comparison of their recognition accuracy, convergence behavior, and computational requirements.
+To investigate the impact of model capacity and architectural complexity on recognition performance, three different Vision Transformer variants were considered in this study: ViT-Tiny, ViT-Small, and ViT-Base. These models represent progressively larger architectures with increasing numbers of parameters and representational capabilities. All models were trained using the same training protocol to enable a fair comparison of their recognition accuracy, convergence behavior, and computational requirements.
 
 The trained versions of these models, together with their corresponding architectural specifications and performance metrics, are presented in the following table.
 
