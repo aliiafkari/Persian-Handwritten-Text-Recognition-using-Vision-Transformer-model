@@ -274,10 +274,12 @@ Convert a `best_accuracy.pth` state dict to a self-contained TorchScript `.pt` f
 
 | Model | Download | Inference file (test) |
 |---|---|---|
-| ViTSTR-Small | [vitstr_small_patch16_224.pth](https://github.com/roatienza/deep-text-recognition-benchmark/releases/download/v0.1.0/vitstr_small_patch16_224.pth) | Inference |
-| ViTSTR-Small+Aug | [vitstr_small_patch16_224_aug.pth](https://github.com/roatienza/deep-text-recognition-benchmark/releases/download/v0.1.0/vitstr_small_patch16_224_aug.pth) | Inference |
-| ViTSTR-Tiny | [vitstr_tiny_patch16_224.pth](https://github.com/roatienza/deep-text-recognition-benchmark/releases/download/v0.1.0/vitstr_tiny_patch16_224.pth) | Inference |
-| ViTSTR-Base | [vitstr_base_patch16_224.pth](https://github.com/roatienza/deep-text-recognition-benchmark/releases/download/v0.1.0/vitstr_base_patch16_224.pth) | Inference |
+| ViTSTR-tiny | [vitstr_tiny_patch16_224.pth](Link TBA) | Inference |
+| ViTSTR-tiny+Aug | [vitstr_tiny_patch16_224.pth](Link TBA) | Inference |
+| ViTSTR-Small | [vitstr_small_patch16_224.pth](Link TBA) | Inference |
+| ViTSTR-Small+Aug | [vitstr_small_patch16_224_aug.pth](Link TBA) | Inference |
+| ViTSTR-Base | [vitstr_base_patch16_224.pth](Link TBA) | Inference |
+| ViTSTR-Base+Aug | [vitstr_base_patch16_224.pth](Link TBA) | Inference |
 
 Place the downloaded `.pth` file in your project root.
 
@@ -309,16 +311,10 @@ Place the downloaded `.pth` file in your project root.
 
 ## Citation
 
-If you use this repository in your research, please cite the original ViTSTR paper:
+If you use this repository in your research, please cite the:
 
 ```bibtex
-@inproceedings{atienza2021vision,
-  title={Vision transformer for fast and efficient scene text recognition},
-  author={Atienza, Rowel},
-  booktitle={International Conference on Document Analysis and Recognition},
-  pages={319--334},
-  year={2021},
-  organization={Springer}
+TBA
 }
 ```
 
