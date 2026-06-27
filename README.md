@@ -302,8 +302,6 @@ Place the downloaded `.pth` file in your project root.
 
 ---
 
-## Citation
-
 ## Acknowledgements
 
 This project is built on top of the outstanding work by **Rowel Atienza**:
