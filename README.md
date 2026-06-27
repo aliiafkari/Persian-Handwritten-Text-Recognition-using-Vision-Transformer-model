@@ -2,7 +2,7 @@
 
 A fine-tuned adaptation of [ViTSTR (Vision Transformer for Scene Text Recognition)](https://github.com/roatienza/deep-text-recognition-benchmark) for **Persian (Farsi) handwritten text recognition (HTR)**.
 
-This repository extends the original ViTSTR codebase to support the Persian script, including a 34-character Persian alphabet, Windows compatibility fixes, Persian-aware data filtering, batch inference with live output, and model export utilities.
+This repository extends the original ViTSTR codebase to support the Persian script, including a 34-character Persian alphabet, Windows compatibility fixes, Persian-aware data filtering, batch inference with live output.
 
 ---
 
