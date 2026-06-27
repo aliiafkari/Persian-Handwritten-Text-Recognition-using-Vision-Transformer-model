@@ -268,23 +268,18 @@ chcp 65001
 
 ---
 
-## Model Export (Optional)
+## Download Fine-tuned models (Optional)
 
 Convert a `best_accuracy.pth` state dict to a self-contained TorchScript `.pt` file for deployment without source code:
 
-```bash
-python convert_to_jit.py \
-  --saved_model saved_models/vitstr_small_patch16_224-Seed1111/best_accuracy.pth \
-  --output vitstr_persian.pt
-```
+| Model | Download | Inference file (test) |
+|---|---|---|
+| ViTSTR-Small | [vitstr_small_patch16_224.pth](https://github.com/roatienza/deep-text-recognition-benchmark/releases/download/v0.1.0/vitstr_small_patch16_224.pth) | Inference |
+| ViTSTR-Small+Aug | [vitstr_small_patch16_224_aug.pth](https://github.com/roatienza/deep-text-recognition-benchmark/releases/download/v0.1.0/vitstr_small_patch16_224_aug.pth) | Inference |
+| ViTSTR-Tiny | [vitstr_tiny_patch16_224.pth](https://github.com/roatienza/deep-text-recognition-benchmark/releases/download/v0.1.0/vitstr_tiny_patch16_224.pth) | Inference |
+| ViTSTR-Base | [vitstr_base_patch16_224.pth](https://github.com/roatienza/deep-text-recognition-benchmark/releases/download/v0.1.0/vitstr_base_patch16_224.pth) | Inference |
 
-Then use it directly in inference:
-
-```bash
-python infer.py --image E:\split\test\4.jpg --model vitstr_persian.pt
-```
-
-The `.pt` file is detected automatically by its extension — no extra flags needed.
+Place the downloaded `.pth` file in your project root.
 
 ---
 
