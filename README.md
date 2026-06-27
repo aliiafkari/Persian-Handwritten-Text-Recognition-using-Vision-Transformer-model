@@ -269,12 +269,12 @@ Convert a `best_accuracy.pth` state dict to a self-contained TorchScript `.pt` f
 
 | Model | Download | | Best Accuracy | | Inference file (test) |
 |---|---|---| --- |
-| ViTSTR-tiny | [vitstr_tiny_patch16_224.pth](Link TBA) | 123| | Inference |
-| ViTSTR-tiny+Aug | [vitstr_tiny_patch16_224.pth](Link TBA) |123 | | Inference |
+| ViTSTR-tiny | [vitstr_tiny_patch16_224.pth](Link TBA) | 123 | Inference |
+| ViTSTR-tiny+Aug | [vitstr_tiny_patch16_224.pth](Link TBA) | 123 | Inference |
 | ViTSTR-Small | [vitstr_small_patch16_224.pth](https://storage.uk.ac.ir/iPO5O213hhoMqIun) | | Inference |
-| ViTSTR-Small+Aug | [vitstr_small_patch16_224_aug.pth](Link TBA) |123 | | Inference |
-| ViTSTR-Base | [vitstr_base_patch16_224.pth](Link TBA) | |123 | Inference |
-| ViTSTR-Base+Aug | [vitstr_base_patch16_224.pth](Link TBA) | Inference |
+| ViTSTR-Small+Aug | [vitstr_small_patch16_224_aug.pth](Link TBA) | 123 | Inference |
+| ViTSTR-Base | [vitstr_base_patch16_224.pth](Link TBA) | 123 | Inference |
+| ViTSTR-Base+Aug | [vitstr_base_patch16_224.pth](Link TBA) | 123 | Inference |
 
 Place the downloaded `.pth` file in your project root.
 
