@@ -42,14 +42,12 @@ All three models were trained and evaluated under identical experimental setting
 ### Dataset
 
 The images used for training the Vision Transformer (ViT) models were selected from the real Persian handwritten dataset developed as part of this project. The dataset currently contains approximately **92,000 manually written word images**, collected from a large and diverse group of writers to ensure substantial variability in handwriting styles, character shapes, and writing conditions. Several representative examples of these handwritten samples are illustrated below. The complete dataset is planned to be released publicly in future stages of the project in order to support research and development in Persian handwritten text recognition.
-| Sample Images | | |
+| Sample Images of IDPL-HFOD dataset (Real images) | | |
 |:---:|:---:|:---:|
-| sample | sample | sample |
-| sample | sample | sample |
-| sample | sample | sample |
-| sample | sample | sample |
-| sample | sample | sample |
-| sample | sample | sample |
+| ![image](assets/110023.jpg) | ![image](assets/110026.jpg) | ![image](assets/110041.jpg) |
+| ![image](assets/110532.jpg) | ![image](assets/110664.jpg) | ![image](assets/110673.jpg) |
+| ![image](assets/1846.jpg) | ![image](assets/1847.jpg) | ![image](assets/532.jpg)|
+| ![image](assets/547.jpg) | ![image](assets/567.jpg) | ![image](assets/598.jpg) |
 
 
 ### Model Variants
