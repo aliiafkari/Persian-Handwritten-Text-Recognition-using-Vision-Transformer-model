@@ -1,6 +1,8 @@
+# ViTSTR — Persian Handwritten Text Recognition
+
 A fine-tuned adaptation of [ViTSTR (Vision Transformer for Scene Text Recognition)](https://github.com/roatienza/deep-text-recognition-benchmark) for **Persian (Farsi) handwritten text recognition (HTR)**.
 
-This repository extends the original ViTSTR codebase to support the Persian script, including a 34-character Persian alphabet, Windows compatibility fixes, Persian-aware data filtering, batch inference with live output.
+This repository extends the original ViTSTR codebase to support the Persian script, including a 34-character Persian alphabet, Windows compatibility fixes, Persian-aware data filtering, batch inference with live output, and model export utilities.
 
 ---
 
@@ -18,6 +20,34 @@ The original ViTSTR codebase is itself a fork of the [CLOVA AI Deep Text Recogni
 
 ---
 
+## ViTSTR Adaptation for Persian Handwritten Text Recognition
+
+In addition to evaluating different Vision Transformer scales, this work includes a Persian adaptation of the ViTSTR (Vision Transformer for Scene Text Recognition) framework for handwritten text recognition. The original ViTSTR architecture, originally proposed for English scene text recognition, was extended and modified to support the specific characteristics of the Persian script and handwriting domain.
+
+The adaptation includes the introduction of a dedicated Persian character vocabulary consisting of 34 Persian characters, together with the required start and end sequence tokens, resulting in a recognition vocabulary of **36 output classes**. Furthermore, several modifications were introduced to improve compatibility with Persian text processing and practical deployment scenarios, including Persian-aware data filtering, support for Unicode Persian text, improved LMDB dataset loading, and cross-platform compatibility enhancements.
+
+The models were initialized using publicly available pre-trained ViTSTR weights trained on large-scale English scene text datasets and subsequently fine-tuned on the Persian handwritten dataset described in the previous section. This transfer learning strategy enables the model to leverage the strong visual representation capabilities learned from large-scale text recognition tasks while adapting the recognition head to the Persian alphabet and handwriting characteristics.
+
+To analyze the influence of model capacity on recognition performance, three ViTSTR variants with different parameter counts and computational complexities were investigated:
+
+- ViTSTR-Tiny
+- ViTSTR-Small
+- ViTSTR-Base
+
+All three models were trained and evaluated under identical experimental settings, including input image resolution, optimization strategy, and training protocol, thereby ensuring a fair comparison between architectures. The resulting models provide insight into the trade-off between recognition accuracy, computational cost, memory consumption, and inference speed for Persian handwritten text recognition.
+
+### Dataset
+
+The images used for training the Vision Transformer (ViT) models were selected from the real Persian handwritten dataset developed as part of this project. The dataset currently contains approximately **92,000 manually written word images**, collected from a large and diverse group of writers to ensure substantial variability in handwriting styles, character shapes, and writing conditions. Several representative examples of these handwritten samples are illustrated below. The complete dataset is planned to be released publicly in future stages of the project in order to support research and development in Persian handwritten text recognition.
+
+### Model Variants
+
+To investigate the impact of model capacity and architectural complexity on recognition performance, three different Vision Transformer variants were considered in this study: ViT-Tiny, ViT-Small, and ViT-Base. These models represent progressively larger architectures with increasing numbers of parameters and representational capabilities. All models were trained using the same training protocol and dataset configuration to enable a fair comparison of their recognition accuracy, convergence behavior, and computational requirements.
+
+The trained versions of these models, together with their corresponding architectural specifications and performance metrics, are presented in the following table.
+
+---
+
 ## What's New in This Fork
 
 | Area | Change |
@@ -28,10 +58,11 @@ The original ViTSTR codebase is itself a fork of the [CLOVA AI Deep Text Recogni
 | **Fine-tuning head** | Automatic detection and re-initialization of the classifier head when its size doesn't match the checkpoint (English→Persian transfer) |
 | **Data augmentation** | Fixed `np.random.choice` crash on inhomogeneous list-of-lists in newer NumPy versions |
 | **Python 3.10+** | Fixed `.next()` → `next()` iterator calls removed in Python 3.10 |
+| **Windows console** | UTF-8 stdout forcing so Persian predictions display correctly on Windows terminals |
 | **Inference** | Batch inference on a whole folder with live per-image output and optional file saving |
+| **Model export** | `convert_to_jit.py` script to export `.pth` state dicts to self-contained TorchScript `.pt` files |
 | **Evaluation** | `benchmark_all_eval` auto-discovers validation folders instead of hardcoding English benchmark names |
 | **Cross-platform** | Replaced Linux `cp` shell command with Python `shutil.copy` |
-| **Windows console** | UTF-8 stdout forcing so Persian predictions display correctly on Windows terminals |
 
 ---
 
@@ -236,6 +267,24 @@ chcp 65001
 ```
 
 ---
+
+## Model Export (Optional)
+
+Convert a `best_accuracy.pth` state dict to a self-contained TorchScript `.pt` file for deployment without source code:
+
+```bash
+python convert_to_jit.py \
+  --saved_model saved_models/vitstr_small_patch16_224-Seed1111/best_accuracy.pth \
+  --output vitstr_persian.pt
+```
+
+Then use it directly in inference:
+
+```bash
+python infer.py --image E:\split\test\4.jpg --model vitstr_persian.pt
+```
+
+The `.pt` file is detected automatically by its extension — no extra flags needed.
 
 ---
 
