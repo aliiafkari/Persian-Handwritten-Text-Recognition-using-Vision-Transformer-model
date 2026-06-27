@@ -1,4 +1,4 @@
-# ViTSTR — Persian Handwritten Text Recognition
+# Vision Transformer for Persian Handwritten Text Recognition
 
 A fine-tuned adaptation of [ViTSTR (Vision Transformer for Scene Text Recognition)](https://github.com/roatienza/deep-text-recognition-benchmark) for **Persian (Farsi) handwritten text recognition (HTR)**.
 
