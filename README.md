@@ -3,6 +3,23 @@
 A fine-tuned adaptation of [ViTSTR (Vision Transformer for Scene Text Recognition)](https://github.com/roatienza/deep-text-recognition-benchmark) for **Persian (Farsi) handwritten text recognition (HTR)**.
 
 This repository extends the original ViTSTR codebase to support the Persian script, including a 34-character Persian alphabet, Windows compatibility fixes, Persian-aware data filtering, batch inference with live output.
+## What's New in This Fork
+
+| Area | Change |
+|---|---|
+| **Character set** | Replaced English alphanumeric with 34 Persian characters (`ا ب پ ت ث ج چ ح خ د ذ ر ز ژ س ش ص ض ط ظ ع غ ف ق ک گ ل م ن و ه ی ء آ`) |
+| **Data filtering** | Replaced regex-based character filtering with set-membership checks — regex `[^...]` misinterprets Arabic/Persian Unicode codepoint ranges |
+| **LMDB loading** | Fixed Windows multiprocessing pickle error by opening LMDB lazily per worker instead of in `__init__` |
+| **Fine-tuning head** | Automatic detection and re-initialization of the classifier head when its size doesn't match the checkpoint (English→Persian transfer) |
+| **Data augmentation** | Fixed `np.random.choice` crash on inhomogeneous list-of-lists in newer NumPy versions |
+| **Python 3.10+** | Fixed `.next()` → `next()` iterator calls removed in Python 3.10 |
+| **Windows console** | UTF-8 stdout forcing so Persian predictions display correctly on Windows terminals |
+| **Inference** | Batch inference on a whole folder with live per-image output and optional file saving |
+| **Model export** | `convert_to_jit.py` script to export `.pth` state dicts to self-contained TorchScript `.pt` files |
+| **Evaluation** | `benchmark_all_eval` auto-discovers validation folders instead of hardcoding English benchmark names |
+| **Cross-platform** | Replaced Linux `cp` shell command with Python `shutil.copy` |
+
+---
 
 ---
 
@@ -43,23 +60,6 @@ The trained versions of these models, together with their corresponding architec
 
 ---
 
-## What's New in This Fork
-
-| Area | Change |
-|---|---|
-| **Character set** | Replaced English alphanumeric with 34 Persian characters (`ابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهیءآ`) |
-| **Data filtering** | Replaced regex-based character filtering with set-membership checks — regex `[^...]` misinterprets Arabic/Persian Unicode codepoint ranges |
-| **LMDB loading** | Fixed Windows multiprocessing pickle error by opening LMDB lazily per worker instead of in `__init__` |
-| **Fine-tuning head** | Automatic detection and re-initialization of the classifier head when its size doesn't match the checkpoint (English→Persian transfer) |
-| **Data augmentation** | Fixed `np.random.choice` crash on inhomogeneous list-of-lists in newer NumPy versions |
-| **Python 3.10+** | Fixed `.next()` → `next()` iterator calls removed in Python 3.10 |
-| **Windows console** | UTF-8 stdout forcing so Persian predictions display correctly on Windows terminals |
-| **Inference** | Batch inference on a whole folder with live per-image output and optional file saving |
-| **Model export** | `convert_to_jit.py` script to export `.pth` state dicts to self-contained TorchScript `.pt` files |
-| **Evaluation** | `benchmark_all_eval` auto-discovers validation folders instead of hardcoding English benchmark names |
-| **Cross-platform** | Replaced Linux `cp` shell command with Python `shutil.copy` |
-
----
 
 ## Persian Character Set
 
