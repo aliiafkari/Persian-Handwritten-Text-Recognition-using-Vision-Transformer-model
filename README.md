@@ -6,23 +6,9 @@ This repository extends the original ViTSTR codebase to support the Persian scri
 
 ---
 
-## Acknowledgements
-
-This project is built on top of the outstanding work by **Rowel Atienza**:
-
-> **Vision Transformer for Fast and Efficient Scene Text Recognition**
-> Rowel Atienza, ICDAR 2021
-> [Paper (Springer)](https://link.springer.com/chapter/10.1007/978-3-030-86549-8_21) | [Paper (arXiv)](https://arxiv.org/abs/2105.08582) | [Original Repository](https://github.com/roatienza/deep-text-recognition-benchmark)
-
-We are deeply grateful to the original authors for open-sourcing their code and pre-trained weights under the Apache 2.0 License. Without their foundational work, this Persian adaptation would not have been possible. Please cite their paper if you use this repository in your research.
-
-The original ViTSTR codebase is itself a fork of the [CLOVA AI Deep Text Recognition Benchmark](https://github.com/clovaai/deep-text-recognition-benchmark) by Baek et al. We thank them as well for their contributions to the community.
-
----
-
 ## ViTSTR Adaptation for Persian Handwritten Text Recognition
 
-In addition to evaluating different Vision Transformer scales, this work includes a Persian adaptation of the ViTSTR (Vision Transformer for Scene Text Recognition) framework for handwritten text recognition. The original ViTSTR architecture, originally proposed for English scene text recognition, was extended and modified to support the specific characteristics of the Persian script and handwriting domain.
+In addition to evaluating different Vision Transformer variants, this work includes a Persian adaptation of the ViTSTR (Vision Transformer for Scene Text Recognition) framework for handwritten text recognition. The original ViTSTR architecture, originally proposed for English scene text recognition, was extended and modified to support the specific characteristics of the Persian script and handwriting domain.
 
 The adaptation includes the introduction of a dedicated Persian character vocabulary consisting of 34 Persian characters, together with the required start and end sequence tokens, resulting in a recognition vocabulary of **36 output classes**. Furthermore, several modifications were introduced to improve compatibility with Persian text processing and practical deployment scenarios, including Persian-aware data filtering, support for Unicode Persian text, improved LMDB dataset loading, and cross-platform compatibility enhancements.
 
@@ -320,12 +306,19 @@ Place the downloaded `.pth` file in your project root.
 
 ## Citation
 
-If you use this repository in your research, please cite the:
+## Acknowledgements
 
-```bibtex
-TBA
-}
-```
+This project is built on top of the outstanding work by **Rowel Atienza**:
+
+> **Vision Transformer for Fast and Efficient Scene Text Recognition**
+> Rowel Atienza, ICDAR 2021
+> [Paper (Springer)](https://link.springer.com/chapter/10.1007/978-3-030-86549-8_21) | [Paper (arXiv)](https://arxiv.org/abs/2105.08582) | [Original Repository](https://github.com/roatienza/deep-text-recognition-benchmark)
+
+We are deeply grateful to the original authors for open-sourcing their code and pre-trained weights under the Apache 2.0 License. Without their foundational work, this Persian adaptation would not have been possible. Please cite their paper if you use this repository in your research.
+
+The original ViTSTR codebase is itself a fork of the [CLOVA AI Deep Text Recognition Benchmark](https://github.com/clovaai/deep-text-recognition-benchmark) by Baek et al. We thank them as well for their contributions to the community.
+
+--- If you use this repository in your research, please cite the:
 
 ---
 
