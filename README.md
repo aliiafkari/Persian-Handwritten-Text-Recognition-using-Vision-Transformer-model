@@ -261,9 +261,7 @@ chcp 65001
 
 ---
 
-## Download Fine-tuned models (Optional)
-
-Convert a `best_accuracy.pth` state dict to a self-contained TorchScript `.pt` file for deployment without source code:
+## Download Fine-tuned models
 
 | Model | Download | Best Accuracy | Inference file (test) |
 |---|---|---|---|
